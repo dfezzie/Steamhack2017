@@ -1,1 +1,15 @@
 {% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+  <div class="col-lg-6">
+    <h1 class="text-center">Welcome</h1>
+    <p class="lead">This page will teach you the basics of how an API works.
+      Click the next button to continue.</p>
+    <a href="/twitter" class="btn btn-default" role="button">Next</a>
+  </div>
+  <div class="col-lg-6">
+    <img class="img-responsive" src="static/images/home-image.png">
+  </div>
+</div>
+{% endblock %}

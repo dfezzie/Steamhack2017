@@ -13,7 +13,7 @@ def hello_world():
 
 @app.route('/api')
 def api():
-    return 'Hi'
+    return render_template('frontend/api_info.html')
 
 
 if __name__ == "__main__":
