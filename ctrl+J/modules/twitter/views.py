@@ -1,9 +1,19 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
+from .forms import TwitterForm
+from .twitterAPI import getTweets
 
 twitter_blueprint = Blueprint('twitter_view', __name__)
 
 
 @twitter_blueprint.route('/twitter', methods=['GET', 'POST'])
 def index():
-    return render_template('twitter/index.html')
+    form = TwitterForm(request.form)
+    if request.method == 'POST':
+        # The form was submitted
+        twitterUsername = form.username.data # This is what the user typed
+        tweets = getTweets(twitterUsername)
+        if tweets:
+            return render_template('twitter/tweets.html', tweets=tweets)
+        return 'Invalid username. Sorry :('
+    return render_template('twitter/index.html', form=form)

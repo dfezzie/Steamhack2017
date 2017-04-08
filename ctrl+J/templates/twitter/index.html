@@ -1,1 +1,17 @@
-Twitter Login
+
+<div class="col-lg-offset-3 col-lg-6">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">Enter a Twitter name</div>
+    <div class="panel-body">
+      <form class="container" method="POST">
+          <fieldset>
+            <div class="form-group">
+                <label for="{{ form.username.id }}">{{ form.username.label }}</label>
+                {{ form.username(class="form-control") }}
+                <span class="help-inline">{{ form.username.description }}</span>
+            </div>
+          </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
