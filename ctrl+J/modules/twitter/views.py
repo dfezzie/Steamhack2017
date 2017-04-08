@@ -11,9 +11,11 @@ def index():
     form = TwitterForm(request.form)
     if request.method == 'POST':
         # The form was submitted
-        twitterUsername = form.username.data # This is what the user typed
-        tweets = getTweets(twitterUsername)
+        username = form.username.data # This is what the user typed
+        tweets = getTweets(username)
         if tweets:
-            return render_template('twitter/tweets.html', tweets=tweets)
+            return render_template('twitter/tweets.html',
+                                   tweets=tweets,
+                                   username=username,)
         return 'Invalid username. Sorry :('
     return render_template('twitter/index.html', form=form)

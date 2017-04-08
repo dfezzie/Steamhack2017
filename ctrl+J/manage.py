@@ -8,7 +8,7 @@ app.register_blueprint(twitter_blueprint)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    return render_template('frontend/index.html')
 
 
 @app.route('/api')
