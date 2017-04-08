@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 
 {% block body %}
+<section>
+<div class="col-lg-offset-3 col-lg-6">
+  <h1 class="text-center">Twitter Experiment</h1>
+</div>
+</section>
+<section>
 <div class="col-lg-offset-3 col-lg-6">
   <div class="panel panel-default">
-    <div class="panel-heading text-center">Enter a Twitter name</div>
+    <div class="panel-heading text-center">Enter a Twitter Username</div>
     <div class="panel-body">
       <form class="{% if horizontal %}form-horizontal{% endif %}" method="POST">
           <fieldset>
@@ -27,4 +33,5 @@
     </div>
   </div>
 </div>
+</section>
 {% endblock %}

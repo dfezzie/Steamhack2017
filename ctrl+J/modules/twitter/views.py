@@ -19,3 +19,8 @@ def index():
                                    username=username,)
         return 'Invalid username. Sorry :('
     return render_template('twitter/index.html', form=form)
+
+
+@twitter_blueprint.route('/how')
+def how():
+    return render_template('twitter/how.html')
