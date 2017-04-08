@@ -5,13 +5,22 @@
   <div class="panel panel-default">
     <div class="panel-heading text-center">Enter a Twitter name</div>
     <div class="panel-body">
-      <form class="container" method="POST">
+      <form class="{% if horizontal %}form-horizontal{% endif %}" method="POST">
           <fieldset>
             <div class="form-group">
-                <label for="{{ form.username.id }}">{{ form.username.label }}</label>
+                <label for="{{ form.username.id }}">{{ form.username.label }} {% if form.username.flags.required %}*{% endif %}</label>
                 {{ form.username(class="form-control") }}
                 <span class="help-inline">{{ form.username.description }}</span>
-
+                {% if form.username.errors -%}
+                    {% for error in form.username.errors -%}
+                    <span class="help-block has-error">{{ error }}</span>
+                    {%- endfor %}
+                {%- endif %}
+            </div>
+            <div class="form-group">
+                <div class="form-actions">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
             </div>
           </fieldset>
       </form>

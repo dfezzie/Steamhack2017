@@ -1,6 +1,7 @@
-from wtforms import Form, TextField
+from wtforms import Form, TextField, SubmitField
 from wtforms.validators import DataRequired
 
 
 class TwitterForm(Form):
-    username = TextField('username', [DataRequired()])
+    username = TextField('Username', [DataRequired()])
+    submit = SubmitField('Submit')
